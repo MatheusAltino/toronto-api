@@ -11,15 +11,10 @@ services:
     ports:
       - "5432:5432"
   app:
-    container_name: toronto-api
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/usr/src/app
-    environment:
-      - PORT=3000
-    ports:
-      - 3000:3000  
-    depends_on:
-      - db
+      container_name: toronto-api
+      restart: always
+      build: .
+      ports:
+        - "3000:3000"
+      depends_on:
+       - db
