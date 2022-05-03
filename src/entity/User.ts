@@ -3,14 +3,20 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 @Entity()
 export class User {
 
+    constructor(name: string, email: string, age: number){
+        this.name = name
+        this.email = email
+        this.age = age
+    }
+
     @PrimaryGeneratedColumn()
     id: number
 
     @Column()
-    firstName: string
+    name: string
 
     @Column()
-    lastName: string
+    email: string
 
     @Column()
     age: number
