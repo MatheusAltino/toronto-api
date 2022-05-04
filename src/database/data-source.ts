@@ -15,3 +15,7 @@ export const AppDataSource = new DataSource({
     migrations: [],
     subscribers: [],
 })
+
+AppDataSource.initialize().then(async () => {
+    console.log(`Db listening app`)
+}).catch(error => console.log(error))
